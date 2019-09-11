@@ -1,0 +1,247 @@
+
+@{
+    ViewBag.Title = "postjob";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  <section style="margin-top: 8%;">
+    <div class="container">
+      <div class="row">
+        <h3>POST NEW JOB</h3>
+        <div class="col-md-12 col-md-offset-1 col-xs-12">
+          <form id="jobForm" method="POST" name="jobForm" onsubmit="return false;" role="form">
+            <div class="form-section-title">Basic Job Details</div>
+            <div class="form-section" id="basicJobDetailsSection">
+              <div class="row">
+                <div class="form-group col-md-6 col-xs-12" id="jobTitleContainer" style="z-index:3;">
+                  <label class="mobile-label" for="jobTitle">Job Title&nbsp;*</label>
+                  <div>
+                    <input autocomplete="off" class="form-control mobile-field dropdown-input-jobTitle" id="jobTitle" maxlength="45" name="jobTitle" placeholder="Eg. Back Office Job" type="text" value="" aria-owns="awesomplete_list_1" role="combobox">
+                    <span class="visually-hidden" role="status" aria-live="assertive" aria-atomic="true">Type 1 or more characters for results.</span>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-xs-12" id="jobIndustryContainer">
+                  <label class="mobile-label" for="jobIndustry">Job Category&nbsp;*</label>
+                  <div class="input-group" style="width: 100%;">
+                    <select class="form-control mobile-field" id="jobIndustry" name="jobIndustry">
+                      <option class="main-list" disabled="" id="main-industry-disabled" selected="" value=""></option>
+                      <option class="main-list" value="accounts">Accounts</option>
+                      <option class="main-list" value="back_office">Admin / Office Assistant</option>
+                      <option class="main-list" value="back_office">Back Office</option>
+                      <option class="other-list" value="beautician">Beautician / Hair Stylist</option>
+                      <option class="other-list" value="business_development">Business Development</option>
+                      <option class="main-list" value="accounts">Chartered Accountant</option>
+                      <option class="main-list" value="chemist">Chemist</option>
+                      <option class="main-list" value="back_office">Computer / Data Entry Operator</option>
+                      <option class="other-list" value="content_writing">Content Writing</option>
+                      <option class="other-list" value="cook">Cook / Chef</option>
+                      <option class="other-list" value="counsellor">Counsellor</option>
+                      <option class="main-list" value="delivery">Delivery Boy</option>
+                      <option class="other-list" value="online_marketing">Digital Marketing / Online Marketing</option>
+                      <option class="main-list" value="driver">Driver</option>
+                      <option class="other-list" value="dtp">DTP Operator</option>
+                      <option class="other-list" value="engineer">Engineer</option>
+                      <option class="main-list" value="graphic_designer">Graphic Designer</option>
+                      <option class="other-list" value="hardware_engineer">Hardware &amp; Network Engineer</option>
+                      <option class="other-list" value="hospitality">Hospitality / Hotel Management</option>
+                      <option class="other-list" value="hotel">Hotel Staff</option>
+                      <option class="main-list" value="housekeeping">Housekeeping</option>
+                      <option class="other-list" value="hr">Human Resource</option>
+                      <option class="other-list" value="lab_technician">Lab Technician</option>
+                      <option class="other-list" value="labourer">Labour / Helper</option>
+                      <option class="other-list" value="machine_operator">Machine Operator</option>
+                      <option class="other-list" value="maid">Maid</option>
+                      <option class="other-list" value="marketing">Marketing</option>
+                      <option class="other-list" value="medical">Medical (Doctor, Dentist etc.)</option>
+                      <option class="other-list" value="nurse">Nurse</option>
+                      <option class="main-list" value="office_boy_peon">Office Boy / Peon</option>
+                      <option class="main-list" value="photographer">Photo &amp; Videograher</option>
+                      <option class="main-list" value="receptionist">Receptionist / Front Office Desk</option>
+                      <option class="main-list" value="retail">Retail / Counter Sales</option>
+                      <option class="main-list" value="field_sales">Sales (Field Work)</option>
+                      <option class="other-list" value="beautician">Salon</option>
+                      <option class="main-list" value="security_guard">Security Guard</option>
+                      <option class="other-list" value="programmer">Software / Web Developer</option>
+                      <option class="other-list" value="tailor">Tailor / Cutting Master</option>
+                      <option class="other-list" value="teacher">Teacher</option>
+                      <option class="main-list" value="technician">Technician / ITI</option>
+                      <option class="main-list" value="telecalling">Telecaller / BPO</option>
+                      <option class="other-list" value="trainer">Trainer</option>
+                      <option class="other-list" value="typist">Typist</option>
+                      <option class="other-list" value="ward_boy">Ward Boy</option>
+                      <option class="other-list" value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6 col-xs-12" id="jobSalaryContainer">
+                  <label class="mobile-label" for="jobMinSalary">Monthly In-hand Salary&nbsp;* <span class="main-color f11">(Only Put Actual Salary)</span></label>
+                  <div>
+                    <div class="input-group" style="z-index: 0;">
+                      <input class="form-control mobile-field" id="jobMinSalary" min="1000" name="jobMinSalary" placeholder="Eg. 10,000" type="number">
+                      <span class="input-group-addon">to</span>
+                      <input class="form-control mobile-field" id="jobMaxSalary" min="1000" name="jobMaxSalary" placeholder="Eg. 15,000" type="number">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-xs-12" id="noOfOpeningsContainer">
+                  <label class="mobile-label" for="noOfOpenings">No Of Openings&nbsp;*</label>
+                  <div>
+                    <input autocomplete="autocomplete-disabled-off" class="form-control mobile-field" id="noOfOpenings" max="1000" min="1" name="noOfOpenings" placeholder="Eg. 2" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6 col-xs-12" id="unifiedLocationContainer">
+                  <label class="mobile-label" for="unifiedLocation">Job Location&nbsp;* <span class="main-color f10">(Please Enter The Job Location)</span></label>
+                  <div class="row">
+                    <div class="col-xs-12" style="position:relative;padding-left: 15px;">
+                      <input class="form-control mobile-field" id="unifiedLocation" name="unifiedLocation" placeholder="Eg. connaught place" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-section-title">Additional Job Details</div>
+            <div class="form-section" id="additionalDetailsSection">
+              <div class="row">
+                <div class="form-group col-md-12" id="jobQualificationContainer">
+                  <label class="mobile-label">Minimum Qualification&nbsp;*</label>
+                  <div class="segment_control_container"><input id="jobQualification1" name="jobQualification" type="radio" value="less_than_tenth"><label class="segment_control" for="jobQualification1">&lt; 10th pass</label><input id="jobQualification2" name="jobQualification" type="radio" value="tenth"><label class="segment_control" for="jobQualification2">10th pass or above</label><input id="jobQualification3" name="jobQualification" type="radio" value="twelfth"><label class="segment_control" for="jobQualification3">12th pass or above</label><input id="jobQualification4" name="jobQualification" type="radio" value="graduate"><label class="segment_control" for="jobQualification4">Graduate</label></div>
+                  <div class="error" id="jobQualificationError"></div>
+                </div>
+                <div class="form-group col-md-12" id="jobExperienceContainer">
+                  <label class="mobile-label">Candidate Experience Needed?&nbsp;*</label>
+                  <div class="segment_control_container"><input id="jobExperience1" name="jobExperience" type="radio" value="0_6_months"><label class="segment_control" for="jobExperience1">0 - 6 months</label><input id="jobExperience2" name="jobExperience" type="radio" value="1_2_years"><label class="segment_control" for="jobExperience2">1 - 2 years</label><input id="jobExperience3" name="jobExperience" type="radio" value="gt_2_years"><label class="segment_control" for="jobExperience3">More than 2 years</label></div>
+                  <div class="error" id="jobExperienceError"></div>
+                </div>
+                <div class="form-group col-md-12" id="jobGenderContainer">
+                  <label class="mobile-label">Gender Preference&nbsp;*</label>
+                  <div class="segment_control_container"><input id="jobGender1" name="jobGender" type="radio" value="both"><label class="segment_control" for="jobGender1">Both genders allowed</label><input id="jobGender2" name="jobGender" type="radio" value="male"><label class="segment_control" for="jobGender2">Male</label><input id="jobGender3" name="jobGender" type="radio" value="female"><label class="segment_control" for="jobGender3">Female</label></div>
+                  <div class="error" id="jobGenderError"></div>
+                </div>
+                <div class="form-group col-md-12" id="jobEnglishContainer">
+                  <label class="mobile-label">English Required&nbsp;*</label>
+                  <div class="segment_control_container"><input id="jobEnglish1" name="jobEnglish" type="radio" value="1"><label class="segment_control" for="jobEnglish1">Does not speak english</label><input id="jobEnglish2" name="jobEnglish" type="radio" value="2"><label class="segment_control" for="jobEnglish2">Speaks thoda english</label><input id="jobEnglish3" name="jobEnglish" type="radio" value="3"><label class="segment_control" for="jobEnglish3">Speaks good english</label><input id="jobEnglish4" name="jobEnglish" type="radio" value="4"><label class="segment_control" for="jobEnglish4">Speaks fluent english</label></div>
+                  <div class="error" id="jobEnglishError"></div><small class="text-secondary form-tip f11" id="jobEnglishSuggestionText"><b>Note</b>: Thoda English Candidates Just know how to Read English Address, etc and Hindi Communication. Don't Expect English Speaking or Email Writing Skills.</small>
+                </div>
+                <div class="form-group col-md-7 col-md-12" id="jobDescriptionContainer">
+                  <label class="mobile-label" for="jobDescription">Job Info / Job Description&nbsp;*</label>
+                  <div>
+                    <textarea autocomplete="autocomplete-false" class="form-control mobile-field" id="jobDescription" name="jobDescription"></textarea><small class="text-secondary" style="font-size: 10px;">Remaining characters: <span id="jobDescriptionCountIndex">150</span></small>
+                    <div class="error" id="jobDescriptionError"></div>
+                  </div>
+                </div>
+                <div class="" id="call_tapoff_container">
+                  <div class="form-group col-md-12 col-xs-12">
+                    <label class="mobile-label">Are You OK Getting More Than 20 Calls Per Day?<div class="main-color f11">(Some Employers Do Not Like Too Many Calls A Day. Hence We Give You An Option)</div></label>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="font-control" style="margin-top: 6px;">
+                          <label class="control control--radio" style="display: inline-block; margin-bottom: 12px;">
+                            Yes<input checked="" name="should_tap_off_job" type="radio" value="0">
+                            <div class="control__indicator"></div>
+                          </label><label class="control control--radio" style="display: inline-block; margin-bottom: 12px;">
+                            No<input name="should_tap_off_job" type="radio" value="1">
+                            <div class="control__indicator"></div>
+                          </label>
+                          <div class="error" id="job_form_tapoff_errorloc"></div>
+                          <div id="tap_off_suggestion" style="margin-top: 2px;"><small style="font-size: 10px;"><b>Note:</b> <span class="main-color">We Won't Provide More Than 20 Calls Per Day.</span></small></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-section collapsible-form-section" id="timingsSection">
+              <div class="collapsible-form-section--un-collapsed">
+                <button class="btn btn-xs btn-default collapsible-form-btn">Change</button>
+
+              </div>
+              <div class="collapsible-form-section--collapsed">
+                <div class="row">
+                  <div class="form-group col-md-6 col-xs-12" id="jobTimingsContainer">
+                    <label class="mobile-label" for="jobTimings">Job Timings&nbsp;*</label>
+                    <textarea autocomplete="autocomplete-false" class="form-control mobile-field" id="jobTimings" maxlength="500" name="jobTimings" placeholder="9:30 am - 6:30pm | Monday to Saturday">9:30 am - 6:30pm | Monday to Saturday</textarea>
+                    <small class="text-secondary form-tip f11">Please mention job timings correctly otherwise candidates may not join</small>
+                  </div>
+                  <div class="form-group col-md-6 col-xs-12" id="interviewTimingsContainer">
+                    <label class="mobile-label" for="interviewTimings">Interview Details&nbsp;*</label>
+                    <textarea autocomplete="autocomplete-false" class="form-control mobile-field" id="interviewTimings" maxlength="500" name="interviewTimings" placeholder="11:00 am - 4:00pm | Monday to Saturday">11:00 am - 4:00pm | Monday to Saturday</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-section-title">About Your Company</div>
+            <div class="form-section collapsible-form-section collapsible-form-section--show" id="aboutCompanySection">
+              <div class="collapsible-form-section--un-collapsed">
+                <button class="btn btn-xs text-secondary btn-default collapsible-form-btn">Change</button>
+
+              </div>
+              <div class="collapsible-form-section--collapsed">
+                <div class="row">
+                  <div class="form-group col-md-6 col-xs-12" id="companyNameContainer">
+                    <label class="mobile-label" for="companyName">Company Name&nbsp;*</label>
+                    <div>
+                      <input autocomplete="autocomplete-false" class="form-control mobile-field" id="companyName" maxlength="99" name="companyName" placeholder="Eg. Eloquent Info Solutions" type="text">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-xs-12" id="contactPersonContainer">
+                    <label class="mobile-label" for="contactPerson">Contact Person Name&nbsp;*</label>
+                    <div>
+                      <input autocomplete="autocomplete-false" class="form-control mobile-field text-capitalize" id="contactPerson" maxlength="99" name="contactPerson" placeholder="Eg. Nilesh, HR" type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 col-xs-12" id="phoneNoContainer">
+                    <label class="mobile-label" for="phoneNo">Phone no&nbsp;*</label>
+                    <div>
+                      <div class="input-group">
+                        <div class="input-group-addon">+91</div>
+                        <input autocomplete="autocomplete-false" class="form-control mobile-field" id="phoneNo" maxlength="11" minlength="10" name="phoneNo" type="tel">
+                      </div>
+                      <small class="text-secondary form-tip f11">Candidates will call you on this number. You wil receive OTP.</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-xs-12" id="emailIdContainer">
+                    <label class="mobile-label" for="emailId">Email Id&nbsp;*</label>
+                    <div>
+                      <input autocomplete="autocomplete-false" class="form-control mobile-field text-lowercase" id="emailId" maxlength="99" name="emailId" placeholder="Eg. eloquent@gmail.com" type="text">
+                      <small class="text-secondary f11 form-tip">Candidates will send resumes on this email-id.</small>
+                      <small class="text-secondary f11" id="emailIdSocialLoginContainer">
+                        <a id="emailIdSocialLogin">Click here</a> to login with Google
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 col-xs-12" id="jobAddressContainer">
+                    <label class="mobile-label" for="jobAddress">Job Address * <span class="main-color f11">(Address ONLY shown to genuine candidates after a test)</span></label>
+                    <textarea autocomplete="autocomplete-false" class="form-control mobile-field" id="jobAddress" name="jobAddress"></textarea>
+                    <small class="text-secondary f11 form-tip">Please fill complete address, mention Landmark near your office</small>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom: 10px; padding: 0 10px;">
+              <div class="row" id="termsContainer" style="display: block;">
+                <div class="col-md-12">
+                  <div class="checkbox">
+                    <label class="mobile-label">
+                      <input checked="" id="terms" name="terms" type="checkbox">I Accept <a href="/terms/" style="text-decoration: underline; color:#007bff;" target="_blank">Terms And Conditions</a> and <a href="/privacy/" style="text-decoration: underline; color:#007bff;" target="_blank">Privacy Policy</a>.*
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center" style="margin: 24px 0;">
+              <input class="btn btn-lg btn-success btn-shadow font-weight-700" id="submit" style="padding: 10px 28px;" type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

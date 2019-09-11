@@ -1,0 +1,81 @@
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewBag.Title = "Home Page";
+}
+<div>
+<!-- <UserSelector></UserSelector> -->
+<section class="letsemploy-banner-area">
+  <div class="banner-slider owl-carousel">
+    <div class="banner-single-slider slider-item-1">
+      <div class="slider-offset"></div>
+    </div>
+    <div class="banner-single-slider slider-item-2">
+      <div class="slider-offset"></div>
+    </div>
+  </div>
+  <div class="banner-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="banner-search">
+            <h2>Hire expert Talents.</h2>
+
+            <div class="jobsearchcatdiv">
+              <span><a href="#" class="underline"> All Jobs</a></span>
+              <span><a href="#"> Govt Jobs</a></span>
+              <span><a href="#"> Contract Jobs</a></span>
+              <span><a href="#"> Walk-in Jobs</a></span>
+              <span><a href="#"> Fresher Jobs</a></span>
+            </div>
+            <form id="jobsearch__searchform">
+              <div class="container" id="jobsearch__searchformdiv">
+                <div class="row">
+                  <div class="col-md-11 col-md-11-padding">
+                    <div class="banner-form-box">
+                      <div class="container">
+                        <div class="row">
+                          <div class="jobsearch__searchbox__primary_col12" id="jobsearch__searchbox__primary">
+                            <div class="banner-form-input">
+                              <input type="text" placeholder="Job Title, Keywords, or Phrase">
+                            </div>
+                          </div>
+                          <div class="jobsearch__searchbox__primary_col6" id="jobsearch__searchbox__secondry">
+                            <div class="banner-form-input">
+                              <input type="text" placeholder="City, State or ZIP">
+
+                              <select class="banner-select">
+                                <option selected>Select Sector</option>
+                                <option value="1">Design & multimedia</option>
+                                <option value="2">Programming & tech</option>
+                                <option value="3">Accounting/finance</option>
+                                <option value="4">content writting</option>
+                                <option value="5">Training</option>
+                                <option value="6">Digital Marketing</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-1 col-sm-12">
+                    <div class="banner-form-input ">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <h4>We have 1542 job offers for you! </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+@RenderPage("~/Views/Shared/_trending.cshtml")
+@section Vuejs {
+  <script src="~/Scripts/bundle/Landingpage.js"></script>
+}
